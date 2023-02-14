@@ -1,0 +1,37 @@
+html,
+body {
+  width: 400px;
+  min-height: 200px;
+  margin: 0;
+  font-family: 'Cabin Sketch', cursive;
+}
+
+legend {
+  font-size: 1.2em;
+  font-weight: 700;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+  color: white;
+  font-size: .8em;
+}
+
+a:hover {
+  font-weight: 600;
+}
+
+.input-group-append .btn-info {
+  background: white;
+  color: #17a2b8;
+}
+
+#url-display {
+  cursor: default;
+}
+
+.buttons .btn-group-sm>.btn,
+.buttons .btn-sm {
+  font-size: .72rem;
+}

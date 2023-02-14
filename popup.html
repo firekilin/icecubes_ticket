@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Placeholder Image</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css">
+  <!-- CSS only -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- JavaScript Bundle with Popper -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js" ></script>
+  <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/pop.css">
+  
+
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingOne">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          台鐵車票
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+        <section class="placeholder-image bg-secondary border rounded p-2">
+          <p>限定 單程 依車次</p>
+          <div class="form-row justify-content-between">
+            <div class="col">
+              <input type="radio" id="railway_open" value="open" name="railway_status" />開啟
+              <input type="radio" id="railway_close" value="close" name="railway_status" />關閉
+            </div>
+          </div>
+          <div class="form-row justify-content-between">
+            <div class="col">
+              <input type="radio" id="PERSON_ID" value="PERSON_ID" name="railway_country" />身分證字號
+              <input type="radio" id="PASSPORT_NO" value="PASSPORT_NO" name="railway_country" />護照號碼/統一證號
+            </div>
+          </div>
+          <div class="form-row justify-content-between">
+            <div class="col">
+              <input type="text" class='form-control form-control-sm' id='railway_userid' placeholder="身分證字號" >
+            </div>
+          </div>
+          <!--Second row-->
+          <div class="form-row justify-content-center mt-2">
+            <div class="col">
+              <div class="form-floating">
+                <select class="form-select" id="railway_start">
+                  <option disabled selected>選擇出發站</option>
+                  <option disabled >--基隆市--</option>
+                  <option value="0900-基隆" data-type="startStation">基隆*</option>
+                  <option value="0920-八堵" data-type="startStation">八堵</option>
+                  <option value="0930-七堵" data-type="startStation">七堵*</option>
+                  <option disabled >--新北市--</option>
+                  <option value="0960-汐止" data-type="startStation">汐止</option>
+                  <option value="1020-板橋" data-type="startStation">板橋*</option>
+                  <option value="1040-樹林" data-type="startStation">樹林*</option>
+                  <option value="1070-鶯歌" data-type="startStation">鶯歌</option>
+                  <option value="7290-福隆" data-type="startStation">福隆</option>
+                  <option value="7300-貢寮" data-type="startStation">貢寮</option>
+                  <option value="7310-雙溪" data-type="startStation">雙溪</option>
+                  <option value="7330-三貂嶺" data-type="startStation">三貂嶺</option>
+                  <option value="7350-猴硐" data-type="startStation">猴硐</option>
+                  <option value="7360-瑞芳" data-type="startStation">瑞芳*</option>
+                  <option value="7380-四腳亭" data-type="startStation">四腳亭</option>
+                  <option disabled >--台北市--</option>
+                  <option value="0980-南港" data-type="startStation">南港*</option>
+                  <option value="0990-松山" data-type="startStation">松山*</option>
+                  <option value="1000-臺北" data-type="startStation">臺北***</option>
+                  <option value="1001-臺北-環島" data-type="startStation">臺北-環島</option>
+                  <option value="1010-萬華" data-type="startStation">萬華*</option>
+                  <option disabled >--桃園市--</option>
+                  <option value="1080-桃園" data-type="startStation">桃園*</option>
+                  <option value="1090-內壢" data-type="startStation">內壢</option>
+                  <option value="1100-中壢" data-type="startStation">中壢*</option>
+                  <option value="1110-埔心" data-type="startStation">埔心</option>
+                  <option value="1120-楊梅" data-type="startStation">楊梅</option>
+                  <option value="1130-富岡" data-type="startStation">富岡</option>
+                  <option disabled >--新竹縣--</option>
+                  <option value="1160-湖口" data-type="startStation">湖口</option>
+                  <option value="1170-新豐" data-type="startStation">新豐</option>
+                  <option value="1180-竹北" data-type="startStation">竹北</option>
+                  <option value="1203-竹東" data-type="startStation">竹東</option>
+                  <option disabled >--新竹市--</option>
+                  <option value="1210-新竹" data-type="startStation">新竹*</option>
+                  <option disabled >--苗栗縣--</option>
+                  <option value="1250-竹南" data-type="startStation">竹南*</option>
+                  <option value="2130-後龍" data-type="startStation">後龍</option>
+                  <option value="2150-白沙屯" data-type="startStation">白沙屯</option>
+                  <option value="2170-通霄" data-type="startStation">通霄</option>
+                  <option value="2180-苑裡" data-type="startStation">苑裡</option>
+                  <option value="3160-苗栗" data-type="startStation">苗栗*</option>
+                  <option value="3180-銅鑼" data-type="startStation">銅鑼</option>
+                  <option value="3190-三義" data-type="startStation">三義</option>
+                  <option disabled >--台中市--</option>
+                  <option value="2200-大甲" data-type="startStation">大甲</option>
+                  <option value="2220-清水" data-type="startStation">清水</option>
+                  <option value="2230-沙鹿" data-type="startStation">沙鹿</option>
+                  <option value="2240-龍井" data-type="startStation">龍井</option>
+                  <option value="2250-大肚" data-type="startStation">大肚</option>
+                  <option value="2260-追分" data-type="startStation">追分</option>
+                  <option value="3220-后里" data-type="startStation">后里</option>
+                  <option value="3230-豐原" data-type="startStation">豐原*</option>
+                  <option value="3250-潭子" data-type="startStation">潭子</option>
+                  <option value="3300-臺中" data-type="startStation">臺中***</option>
+                  <option value="3340-新烏日" data-type="startStation">新烏日</option>
+                  <option value="3350-成功" data-type="startStation">成功</option>
+                  <option disabled >--彰化縣--</option>
+                  <option value="3360-彰化" data-type="startStation">彰化*</option>
+                  <option value="3390-員林" data-type="startStation">員林*</option>
+                  <option value="3410-社頭" data-type="startStation">社頭</option>
+                  <option value="3420-田中" data-type="startStation">田中</option>
+                  <option value="3430-二水" data-type="startStation">二水</option>
+                  <option disabled >--雲林縣--</option>
+                  <option value="3450-林內" data-type="startStation">林內</option>
+                  <option value="3470-斗六" data-type="startStation">斗六*</option>
+                  <option value="3480-斗南" data-type="startStation">斗南</option>
+                  <option disabled >--嘉義縣--</option>
+                  <option value="4050-大林" data-type="startStation">大林</option>
+                  <option value="4060-民雄" data-type="startStation">民雄</option>
+                  <option disabled >--嘉義市--</option>
+                  <option value="4080-嘉義" data-type="startStation">嘉義*</option>
+                  <option disabled >--台南市--</option>
+                  <option value="4120-新營" data-type="startStation">新營*</option>
+                  <option value="4150-隆田" data-type="startStation">隆田</option>
+                  <option value="4170-善化" data-type="startStation">善化</option>
+                  <option value="4190-新市" data-type="startStation">新市</option>
+                  <option value="4200-永康" data-type="startStation">永康</option>
+                  <option value="4220-臺南" data-type="startStation">臺南*</option>
+                  <option value="4250-保安" data-type="startStation">保安</option>
+                  <option value="4270-中洲" data-type="startStation">中洲</option>
+                  <option disabled >--高雄市--</option>
+                  <option value="4290-大湖" data-type="startStation">大湖</option>
+                  <option value="4300-路竹" data-type="startStation">路竹</option>
+                  <option value="4310-岡山" data-type="startStation">岡山*</option>
+                  <option value="4320-橋頭" data-type="startStation">橋頭</option>
+                  <option value="4330-楠梓" data-type="startStation">楠梓</option>
+                  <option value="4340-新左營" data-type="startStation">新左營*</option>
+                  <option value="4400-高雄" data-type="startStation">高雄***</option>
+                  <option value="4440-鳳山" data-type="startStation">鳳山</option>
+                  <option value="4460-九曲堂" data-type="startStation">九曲堂</option>
+                  <option disabled >--屏東縣--</option>
+                  <option value="5000-屏東" data-type="startStation">屏東*</option>
+                  <option value="5030-西勢" data-type="startStation">西勢</option>
+                  <option value="5050-潮州" data-type="startStation">潮州*</option>
+                  <option value="5070-南州" data-type="startStation">南州</option>
+                  <option value="5090-林邊" data-type="startStation">林邊</option>
+                  <option value="5120-枋寮" data-type="startStation">枋寮</option>
+                  <option value="5130-加祿" data-type="startStation">加祿</option>
+                  <option disabled >--台東縣--</option>
+                  <option value="5190-大武" data-type="startStation">大武</option>
+                  <option value="5200-瀧溪" data-type="startStation">瀧溪</option>
+                  <option value="5210-金崙" data-type="startStation">金崙</option>
+                  <option value="5220-太麻里" data-type="startStation">太麻里</option>
+                  <option value="5230-知本" data-type="startStation">知本</option>
+                  <option value="5240-康樂" data-type="startStation">康樂</option>
+                  <option value="6000-臺東" data-type="startStation">臺東*</option>
+                  <option value="6010-山里" data-type="startStation">山里</option>
+                  <option value="6020-鹿野" data-type="startStation">鹿野</option>
+                  <option value="6030-瑞源" data-type="startStation">瑞源</option>
+                  <option value="6050-關山" data-type="startStation">關山</option>
+                  <option value="6070-池上" data-type="startStation">池上</option>
+                  <option disabled >--花蓮縣--</option>
+                  <option value="6080-富里" data-type="startStation">富里</option>
+                  <option value="6090-東竹" data-type="startStation">東竹</option>
+                  <option value="6100-東里" data-type="startStation">東里</option>
+                  <option value="6110-玉里" data-type="startStation">玉里*</option>
+                  <option value="6130-瑞穗" data-type="startStation">瑞穗</option>
+                  <option value="6140-富源" data-type="startStation">富源</option>
+                  <option value="6160-光復" data-type="startStation">光復</option>
+                  <option value="6170-萬榮" data-type="startStation">萬榮</option>
+                  <option value="6180-鳳林" data-type="startStation">鳳林</option>
+                  <option value="6190-南平" data-type="startStation">南平</option>
+                  <option value="6200-林榮新光" data-type="startStation">林榮新光</option>
+                  <option value="6210-豐田" data-type="startStation">豐田</option>
+                  <option value="6220-壽豐" data-type="startStation">壽豐</option>
+                  <option value="6240-志學" data-type="startStation">志學</option>
+                  <option value="6250-吉安" data-type="startStation">吉安</option>
+                  <option value="7000-花蓮" data-type="startStation">花蓮***</option>
+                  <option value="7010-北埔" data-type="startStation">北埔</option>
+                  <option value="7030-新城" data-type="startStation">新城</option>
+                  <option value="7040-崇德" data-type="startStation">崇德</option>
+                  <option value="7050-和仁" data-type="startStation">和仁</option>
+                  <option value="7060-和平" data-type="startStation">和平</option>
+                  <option disabled >--宜蘭縣--</option>
+                  <option value="7070-漢本" data-type="startStation">漢本</option>
+                  <option value="7090-南澳" data-type="startStation">南澳</option>
+                  <option value="7100-東澳" data-type="startStation">東澳</option>
+                  <option value="7110-永樂" data-type="startStation">永樂</option>
+                  <option value="7120-蘇澳" data-type="startStation">蘇澳</option>
+                  <option value="7130-蘇澳新" data-type="startStation">蘇澳新*</option>
+                  <option value="7150-冬山" data-type="startStation">冬山</option>
+                  <option value="7160-羅東" data-type="startStation">羅東</option>
+                  <option value="7180-二結" data-type="startStation">二結</option>
+                  <option value="7190-宜蘭" data-type="startStation">宜蘭*</option>
+                  <option value="7210-礁溪" data-type="startStation">礁溪</option>
+                  <option value="7230-頭城" data-type="startStation">頭城</option>
+                </select>
+                <label for="railway_start">出發站</label>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-floating">
+                <select class="form-select" id="railway_end">
+                  <option disabled selected>選擇抵達站</option>
+                  <option disabled >--基隆市--</option>
+                  <option value="0900-基隆" data-type="startStation">基隆*</option>
+                  <option value="0920-八堵" data-type="startStation">八堵</option>
+                  <option value="0930-七堵" data-type="startStation">七堵*</option>
+                  <option disabled >--新北市--</option>
+                  <option value="0960-汐止" data-type="startStation">汐止</option>
+                  <option value="1020-板橋" data-type="startStation">板橋*</option>
+                  <option value="1040-樹林" data-type="startStation">樹林*</option>
+                  <option value="1070-鶯歌" data-type="startStation">鶯歌</option>
+                  <option value="7290-福隆" data-type="startStation">福隆</option>
+                  <option value="7300-貢寮" data-type="startStation">貢寮</option>
+                  <option value="7310-雙溪" data-type="startStation">雙溪</option>
+                  <option value="7330-三貂嶺" data-type="startStation">三貂嶺</option>
+                  <option value="7350-猴硐" data-type="startStation">猴硐</option>
+                  <option value="7360-瑞芳" data-type="startStation">瑞芳*</option>
+                  <option value="7380-四腳亭" data-type="startStation">四腳亭</option>
+                  <option disabled >--台北市--</option>
+                  <option value="0980-南港" data-type="startStation">南港*</option>
+                  <option value="0990-松山" data-type="startStation">松山*</option>
+                  <option value="1000-臺北" data-type="startStation">臺北***</option>
+                  <option value="1001-臺北-環島" data-type="startStation">臺北-環島</option>
+                  <option value="1010-萬華" data-type="startStation">萬華*</option>
+                  <option disabled >--桃園市--</option>
+                  <option value="1080-桃園" data-type="startStation">桃園*</option>
+                  <option value="1090-內壢" data-type="startStation">內壢</option>
+                  <option value="1100-中壢" data-type="startStation">中壢*</option>
+                  <option value="1110-埔心" data-type="startStation">埔心</option>
+                  <option value="1120-楊梅" data-type="startStation">楊梅</option>
+                  <option value="1130-富岡" data-type="startStation">富岡</option>
+                  <option disabled >--新竹縣--</option>
+                  <option value="1160-湖口" data-type="startStation">湖口</option>
+                  <option value="1170-新豐" data-type="startStation">新豐</option>
+                  <option value="1180-竹北" data-type="startStation">竹北</option>
+                  <option value="1203-竹東" data-type="startStation">竹東</option>
+                  <option disabled >--新竹市--</option>
+                  <option value="1210-新竹" data-type="startStation">新竹*</option>
+                  <option disabled >--苗栗縣--</option>
+                  <option value="1250-竹南" data-type="startStation">竹南*</option>
+                  <option value="2130-後龍" data-type="startStation">後龍</option>
+                  <option value="2150-白沙屯" data-type="startStation">白沙屯</option>
+                  <option value="2170-通霄" data-type="startStation">通霄</option>
+                  <option value="2180-苑裡" data-type="startStation">苑裡</option>
+                  <option value="3160-苗栗" data-type="startStation">苗栗*</option>
+                  <option value="3180-銅鑼" data-type="startStation">銅鑼</option>
+                  <option value="3190-三義" data-type="startStation">三義</option>
+                  <option disabled >--台中市--</option>
+                  <option value="2200-大甲" data-type="startStation">大甲</option>
+                  <option value="2220-清水" data-type="startStation">清水</option>
+                  <option value="2230-沙鹿" data-type="startStation">沙鹿</option>
+                  <option value="2240-龍井" data-type="startStation">龍井</option>
+                  <option value="2250-大肚" data-type="startStation">大肚</option>
+                  <option value="2260-追分" data-type="startStation">追分</option>
+                  <option value="3220-后里" data-type="startStation">后里</option>
+                  <option value="3230-豐原" data-type="startStation">豐原*</option>
+                  <option value="3250-潭子" data-type="startStation">潭子</option>
+                  <option value="3300-臺中" data-type="startStation">臺中***</option>
+                  <option value="3340-新烏日" data-type="startStation">新烏日</option>
+                  <option value="3350-成功" data-type="startStation">成功</option>
+                  <option disabled >--彰化縣--</option>
+                  <option value="3360-彰化" data-type="startStation">彰化*</option>
+                  <option value="3390-員林" data-type="startStation">員林*</option>
+                  <option value="3410-社頭" data-type="startStation">社頭</option>
+                  <option value="3420-田中" data-type="startStation">田中</option>
+                  <option value="3430-二水" data-type="startStation">二水</option>
+                  <option disabled >--雲林縣--</option>
+                  <option value="3450-林內" data-type="startStation">林內</option>
+                  <option value="3470-斗六" data-type="startStation">斗六*</option>
+                  <option value="3480-斗南" data-type="startStation">斗南</option>
+                  <option disabled >--嘉義縣--</option>
+                  <option value="4050-大林" data-type="startStation">大林</option>
+                  <option value="4060-民雄" data-type="startStation">民雄</option>
+                  <option disabled >--嘉義市--</option>
+                  <option value="4080-嘉義" data-type="startStation">嘉義*</option>
+                  <option disabled >--台南市--</option>
+                  <option value="4120-新營" data-type="startStation">新營*</option>
+                  <option value="4150-隆田" data-type="startStation">隆田</option>
+                  <option value="4170-善化" data-type="startStation">善化</option>
+                  <option value="4190-新市" data-type="startStation">新市</option>
+                  <option value="4200-永康" data-type="startStation">永康</option>
+                  <option value="4220-臺南" data-type="startStation">臺南*</option>
+                  <option value="4250-保安" data-type="startStation">保安</option>
+                  <option value="4270-中洲" data-type="startStation">中洲</option>
+                  <option disabled >--高雄市--</option>
+                  <option value="4290-大湖" data-type="startStation">大湖</option>
+                  <option value="4300-路竹" data-type="startStation">路竹</option>
+                  <option value="4310-岡山" data-type="startStation">岡山*</option>
+                  <option value="4320-橋頭" data-type="startStation">橋頭</option>
+                  <option value="4330-楠梓" data-type="startStation">楠梓</option>
+                  <option value="4340-新左營" data-type="startStation">新左營*</option>
+                  <option value="4400-高雄" data-type="startStation">高雄***</option>
+                  <option value="4440-鳳山" data-type="startStation">鳳山</option>
+                  <option value="4460-九曲堂" data-type="startStation">九曲堂</option>
+                  <option disabled >--屏東縣--</option>
+                  <option value="5000-屏東" data-type="startStation">屏東*</option>
+                  <option value="5030-西勢" data-type="startStation">西勢</option>
+                  <option value="5050-潮州" data-type="startStation">潮州*</option>
+                  <option value="5070-南州" data-type="startStation">南州</option>
+                  <option value="5090-林邊" data-type="startStation">林邊</option>
+                  <option value="5120-枋寮" data-type="startStation">枋寮</option>
+                  <option value="5130-加祿" data-type="startStation">加祿</option>
+                  <option disabled >--台東縣--</option>
+                  <option value="5190-大武" data-type="startStation">大武</option>
+                  <option value="5200-瀧溪" data-type="startStation">瀧溪</option>
+                  <option value="5210-金崙" data-type="startStation">金崙</option>
+                  <option value="5220-太麻里" data-type="startStation">太麻里</option>
+                  <option value="5230-知本" data-type="startStation">知本</option>
+                  <option value="5240-康樂" data-type="startStation">康樂</option>
+                  <option value="6000-臺東" data-type="startStation">臺東*</option>
+                  <option value="6010-山里" data-type="startStation">山里</option>
+                  <option value="6020-鹿野" data-type="startStation">鹿野</option>
+                  <option value="6030-瑞源" data-type="startStation">瑞源</option>
+                  <option value="6050-關山" data-type="startStation">關山</option>
+                  <option value="6070-池上" data-type="startStation">池上</option>
+                  <option disabled >--花蓮縣--</option>
+                  <option value="6080-富里" data-type="startStation">富里</option>
+                  <option value="6090-東竹" data-type="startStation">東竹</option>
+                  <option value="6100-東里" data-type="startStation">東里</option>
+                  <option value="6110-玉里" data-type="startStation">玉里*</option>
+                  <option value="6130-瑞穗" data-type="startStation">瑞穗</option>
+                  <option value="6140-富源" data-type="startStation">富源</option>
+                  <option value="6160-光復" data-type="startStation">光復</option>
+                  <option value="6170-萬榮" data-type="startStation">萬榮</option>
+                  <option value="6180-鳳林" data-type="startStation">鳳林</option>
+                  <option value="6190-南平" data-type="startStation">南平</option>
+                  <option value="6200-林榮新光" data-type="startStation">林榮新光</option>
+                  <option value="6210-豐田" data-type="startStation">豐田</option>
+                  <option value="6220-壽豐" data-type="startStation">壽豐</option>
+                  <option value="6240-志學" data-type="startStation">志學</option>
+                  <option value="6250-吉安" data-type="startStation">吉安</option>
+                  <option value="7000-花蓮" data-type="startStation">花蓮***</option>
+                  <option value="7010-北埔" data-type="startStation">北埔</option>
+                  <option value="7030-新城" data-type="startStation">新城</option>
+                  <option value="7040-崇德" data-type="startStation">崇德</option>
+                  <option value="7050-和仁" data-type="startStation">和仁</option>
+                  <option value="7060-和平" data-type="startStation">和平</option>
+                  <option disabled >--宜蘭縣--</option>
+                  <option value="7070-漢本" data-type="startStation">漢本</option>
+                  <option value="7090-南澳" data-type="startStation">南澳</option>
+                  <option value="7100-東澳" data-type="startStation">東澳</option>
+                  <option value="7110-永樂" data-type="startStation">永樂</option>
+                  <option value="7120-蘇澳" data-type="startStation">蘇澳</option>
+                  <option value="7130-蘇澳新" data-type="startStation">蘇澳新*</option>
+                  <option value="7150-冬山" data-type="startStation">冬山</option>
+                  <option value="7160-羅東" data-type="startStation">羅東</option>
+                  <option value="7180-二結" data-type="startStation">二結</option>
+                  <option value="7190-宜蘭" data-type="startStation">宜蘭*</option>
+                  <option value="7210-礁溪" data-type="startStation">礁溪</option>
+                  <option value="7230-頭城" data-type="startStation">頭城</option>
+                </select>
+                <label for="railway_end">抵達站</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-row justify-content-center mt-2">
+            <div class="col">
+              <input type="number" min='0' value="0" class='form-control form-control-sm' id='railway_normal' placeholder="座位數" >
+              <label for="railway_normal">普通座</label>
+            </div>
+            <div class="col">
+              <input type="number" min='0' class='form-control form-control-sm' id='railway_wheelchair' placeholder="輪椅座數" >
+              <label for="railway_normal">輪椅座</label>
+            </div>
+            <div class="col">
+              <input type="number" min='0' class='form-control form-control-sm' id='railway_child' placeholder="親子座數" >
+              <label for="railway_normal">親子座</label>
+            </div>
+          </div>
+          <div class="form-row justify-content-center mt-2">
+            <div class="col">
+              <input type="text" class='form-control form-control-sm' id='railway_num' placeholder="車次" >
+            </div>
+            <div class="col">
+              <input type="text" class='form-control form-control-sm' id='railway_num2' placeholder="車次2" >
+            </div>
+            <div class="col">
+              <input type="text" class='form-control form-control-sm' id='railway_num3' placeholder="車次3" >
+    
+            </div>
+          </div>
+          <div class="form-row justify-content-center mt-2">
+            <div class="col">
+              <input type="date" id="railway_date" />
+            </div>
+          </div>
+          
+          <div class="form-row justify-content-center mt-2">
+            
+            <div class="col">
+              <button id="railway_save">存檔開始</button>
+              <input readonly id="railway_test" style="background-color:#dbdbdb ; border: none;">
+            </div>
+          </div>
+          <div class="form-row justify-content-center mt-2">
+            
+            <div class="col">
+              <p>將自動於 00:00:00 時自動送單</p>
+              <p>請注意 非機器人認證 狀態</p>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingTwo">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          高鐵車票
+        </button>
+      </h2>
+      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+        <section class="bg-secondary border rounded p-2">
+          <div class="form-row justify-content-between">
+            <div class="col">
+              <input type="checkbox"  id='thsrc_buyticket' >
+              <label for="thsrc_buyticket">是否啟動快速搶票功能</label>
+            </div>
+          </div>
+          <div class="form-row justify-content-between">
+            <div class="col">
+              <input type="text" class='form-control form-control-sm' id='thsrc_userid' placeholder="身分證字號" >
+              <label for="thsrc_userid">身份證字號</label>
+      
+            </div>
+          </div>
+          <div class="form-row justify-content-between">
+            <div class="col">
+              <input type="text" class='form-control form-control-sm' id='thsrc_phone' placeholder="手機" >
+              <label for="thsrc_phone">手機</label>
+      
+            </div>
+          </div>
+          <div class="form-row justify-content-between">
+            <div class="col">
+              <input type="text" class='form-control form-control-sm' id='thsrc_email' placeholder="Email" >
+              <label for="thsrc_email">Email</label>
+      
+            </div>
+          </div>
+          <br>
+          <p>看票搶票功能</p>
+          <div class="form-row justify-content-center mt-2">
+            <div class="col">
+              <input type="checkbox"  id='thsrc_lookticket' >
+              <label for="thsrc_lookticket">是否啟動自動看票</label>
+            </div>
+          </div>
+          <div class="form-row justify-content-center mt-2">
+            <div class="col">
+              <input type="checkbox"  id='thsrc_checkgetticket' >
+              <label for="thsrc_checkgetticket">是否啟動自動買票</label>
+            </div>
+          </div>
+          <div class="form-row justify-content-center mt-2">
+            <div class="col">
+              <input type="checkbox"  id='thsrc_notifycheck' >
+              <label for="thsrc_notifycheck">是否啟動通知功能</label>
+            </div>
+          </div>
+          <div class="form-row justify-content-center mt-2">
+            <div class="col">
+              <input type="text" class='form-control form-control-sm' id='thsrc_start' placeholder="23:59" >
+              <label for="thsrc_start">時間起</label>
+            </div>
+          </div>
+          <div class="form-row justify-content-center mt-2">
+            <div class="col">
+              <input type="text" class='form-control form-control-sm' id='thsrc_end' placeholder="23:59" >
+              <label for="thsrc_end">時間迄</label>
+            </div>
+          </div>
+          
+          <div class="form-row justify-content-center mt-2">
+            <div class="col">
+              <button id="thsrc_save">存檔開始</button>
+              <input readonly id="thsrc_test" style="background-color:#dbdbdb ; border: none;">
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingThree">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          TixCraft 購票
+        </button>
+      </h2>
+      <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+        <section class="bg-secondary border rounded p-2">
+          <div class="form-row justify-content-between">
+            <div class="col">
+              <input type="checkbox"  id='tixcraft_quick' >
+              <label for="tixcraft_quick">啟動輔助程式</label>
+            </div>
+          </div>
+          <div class="form-row justify-content-between">
+            
+            <div class="col">
+              <input type="date"  id='tixcraft_date' name="tixcraft_date" >
+              <label for="tixcraft_date">日期</label>
+            </div>
+            <div class="col">
+              <input type="text"  id='tixcraft_time' name="tixcraft_time" placeholder="08:00" >
+              <label for="tixcraft_time">時間</label>
+            </div>
+          </div>
+          <div class="form-row justify-content-between">
+            
+            <div class="col">
+              <input type="radio"  id='tixcraft_auto' value="auto" name="tixcraft_getquick" >
+              <label for="tixcraft_auto">電腦選位(快速)</label>
+              <input type="radio"  id='tixcraft_human' value="human"  name="tixcraft_getquick" >
+              <label for="tixcraft_human">手動選位</label>
+            </div>
+          </div>
+
+          <div class="form-row justify-content-between">
+            <div class="col">
+              <label for="tixcraft_area">區域名稱，配合示意圖填寫(不用寫完整)</label>
+            </div>
+          </div>  
+          <div class="form-row justify-content-between">
+            <div class="col">
+              <p><label for="tixcraft_area">第一序列</label></p>
+            </div>
+            <div class="col">
+              <input type="text" class='form-control form-control-sm' id='tixcraft_area' placeholder="x樓x區0000" >
+
+            </div>
+          </div>
+          <div class="form-row justify-content-between">
+            <div class="col">
+              <p><label for="tixcraft_area2">第二序列</label></p>
+            </div>
+            <div class="col">
+              <input type="text" class='form-control form-control-sm' id='tixcraft_area2' placeholder="x樓x區0000" >
+            </div>
+          </div>
+          <div class="form-row justify-content-between">
+            <div class="col">
+              <p><label for="tixcraft_area3">第三序列</label></p>
+            </div>
+            <div class="col">
+              <input type="text" class='form-control form-control-sm' id='tixcraft_area3' placeholder="x樓x區0000" >
+
+            </div>
+          </div>
+          <div class="form-row justify-content-between">
+            <div class="col">
+              <p><label for="tixcraft_area4">第四序列</label></p>
+            </div>
+            <div class="col">
+              <input type="text" class='form-control form-control-sm' id='tixcraft_area4' placeholder="x樓x區0000" >
+            </div>
+          </div>
+          <div class="form-row justify-content-between">
+            <div class="col">
+              <p><label for="tixcraft_omg">第五序列(只求有位)</label></p>
+            </div>
+            <div class="col">
+              <input type="checkbox" id='tixcraft_omg' >
+            </div>
+          </div>
+          <div class="form-row justify-content-between">
+            <div class="col">
+              <label for="tixcraft_ticketcount">票數</label>
+            </div>
+            <div class="col">
+              <input type="number"  id='tixcraft_ticketcount' placeholder="0" />
+              <label for="tixcraft_ticketcount">(數量若超過將取最大值)</label>
+            </div>
+          </div>
+          <div class="form-row justify-content-between">
+            <div class="col">
+              <label for="tixcraft_anser">輸入回答</label>
+            </div>
+            <div class="col">
+              <input type="text"  id='tixcraft_anser' placeholder="xxxxxx" />
+              <label for="tixcraft_anser">( 信用卡8碼或其他答案）</label>
+            </div>
+          </div>
+          <div class="form-row justify-content-between">
+            <div class="col">
+              <p><label for="tixcraft_ocr">自動驗證碼</label></p>
+            </div>
+            <div class="col">
+              <input type="checkbox" id='tixcraft_ocr' >
+            </div>
+          </div>
+          <div class="form-row justify-content-between">
+            <div class="col">
+              <p><label for="tixcraft_autosend">自動送出(有機率被鎖)</label></p>
+            </div>
+            <div class="col">
+              <input type="checkbox" id='tixcraft_autosend' >
+            </div>
+          </div>
+          <div class="form-row justify-content-center mt-2">
+            <div class="col">
+              <button id="tixcraft_save">存檔開始</button>
+              <input readonly id="tixcraft_test" style="background-color:#dbdbdb ; border: none;">
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingFour">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+          台北市體育局
+        </button>
+      </h2>
+      <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+        <section class="bg-secondary border rounded p-2">
+          <div class="form-row justify-content-between">
+            <label>是否啟動</label>
+            <div class="col">
+              <div class="form-floating">
+                <label><input type="radio" name="tms_using" id="tms_using0" value="0" title="是"> 是 </label>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-floating">
+                <label><input type="radio" name="tms_using" id="tms_using1" value="1" title="否"> 否 </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-row justify-content-between">
+            <div class="col">
+              <div class="form-floating">
+                <label for="tms_EventType">類別</label>
+                <select name="tms_EventType" id="tms_EventType" title="請選擇租借活動類別" class="form-select" style="overflow:hidden ;">
+                  <option value="0">請選擇 </option>
+                  <option value="1">體育活動 </option>
+                  <option value="2">非體育性活動 </option>
+                  <option value="3">職業運動 </option>
+                  <option value="4">商業攝影 </option>
+                  <option value="5">婚紗攝影 </option>
+                </select>
+              </div>
+             
+            </div>
+          </div>
+          <div class="form-row justify-content-between">
+            <div class="col">
+              <div class="form-floating">
+                <label for="tms_GovernmentType">減(免)徵(收)情況</label>
+                <select name="tms_GovernmentType" id="tms_GovernmentType" t="1" title="是否符合下列減(免)徵(收)情形">
+                  <option value="0">請選擇 Please select</option>
+                  <option value="1">本府或本府所屬機關（構）、學校辦理各項活動，得免徵（收）場地使用費及其他使用規費。 The government or its affiliated institutions (or organizations) and schools may waive facility fees and other usage fees when sponsoring events.</option>
+                  <option value="2">本府以外其他機關（構）、公立學校辦理各項活動，得免徵場地使用費。但仍應收取其他使用規費。 Other institutions (or organizations) and public schools may waive facility fees when sponsoring events. However, other usage fees are still levied.</option>
+                  <option value="3">本府、本局或其他本府所屬機關（構）、學校與民間團體或私法人共同主辦各項活動，得免徵（收）場地使用費。但仍應徵（收）其他使用規費。 The government, the Bureau or other government-affiliated institutions (or organizations), schools and non-governmental organizations or private corporations may waive facility fees when co-sponsoring events. However, other usage fees are still levie</option>
+                  <option value="4">本府以外其他機關（構）、公立學校與民間團體或私法人共同主辦各項活動，得免徵（收）場地使用費。但仍應徵（收）其他使用規費。 Other institutions (or organizations), public schools or private corporations may waive facility fees when co-sponsoring events. However, other usage fees are still levied.</option>
+                  <option value="5">本府或本局以協辦名義協助民間團體或私法人辦理各項活動，得免徵場地使用費。但仍應徵（收）其他使用規費。 Non-governmental organizations or private corporations may facility venue fees when sponsoring events co-organized by the government or the Bureau. However, other usage fees are still levied.</option>
+                  <option value="6">臺北市中正盃、青年盃體育活動及臺北市各區體育會辦理年度各項體育活動，得免徵（收）定金、場地使用費及其他使用規費。 Sport events of Taipei Chiang Kai-shek's Cup, Youth Cup and all Taipei sport associations may waive facility fees and other usage fee when sponsoring sport events.</option>
+                  <option value="8">本府所屬機關、學校辦理或共同辦理各項活動，得免徵(收)場地使用費及照明使用費。 Activities are hosted or co-hosted by all departments and schools that belong to Taipei City Government can get exemption from site rent expense and lighting fee.</option>
+                  <option value="9">本府以外其他機關、公立學校辦理各項活動，得免徵(收)場地使用費。但仍應徵(收)照明使用費。 Activities are hosted by departments and public schools apart from Taipei City Government can get exemption from site rent expense, but the lighting fee will still be charged.</option>
+                  <option value="10">本府或本局與民間團體或私法人合作辦理各項活動，得免徵(收)場地使用費。但仍應徵(收)照明使用費。 Activities are co-hosted by NGO or corporate with Taipei City Government or Taipei City Government Department of Sports can get exemption from site rent expense, but the lighting fee will still be charged.</option>
+                  <option value="11">無收費、無商品展示行銷、廣告之非營利性活動，得免徵(收)場地使用費，但仍應收取應徵(收)照明使用費。 Non-profit activities that is free of charge and no ads can get exemption from site rent expense, but the lighting fee will still be charged.</option>
+                  <option value="12">不屬於以上各項減(免)徵(收)情形 None of above</option>
+                  <option value="13">不屬於以上各項減(免)徵(收)情形。(應徵(收)場地使用費及夜間照明使用費) Doesn't fall into any of the above situations. (Need to charge site rent expense and lighting fee.)</option>
+
+                </select>
+                
+              </div>
+            </div>
+          </div>
+          <div class="form-row justify-content-between">
+            <label>是否售票</label>
+            <div class="col">
+              <div class="form-floating">
+                <label><input type="radio" name="tms_SellTickets" id="tms_SellTickets1" value="1" title="否 "> 否 </label>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-floating">
+                <label><input type="radio" name="tms_SellTickets" id="tms_SellTickets2" value="2" title="是 "> 是 </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row justify-content-between">
+            <label>選擇場地</label>
+            <div class="col">
+              <div class="form-floating">
+                <input type="text" name="tms_SubVenuesTagDiv" id="tms_SubVenuesTagDiv" value="" title="活動名稱" >
+              </div>
+            </div>
+          </div>
+          <div class="form-row justify-content-between">
+              <div class="col">
+                <input type="date" id="tms_date" />
+              </div>
+          </div>
+          <div class="form-row justify-content-center mt-2">
+            <div class="col">
+              <div class="form-floating">
+                <select class="form-select" id="tms_start">
+                  <option disabled selected>選擇時間</option>
+                  <option value="8">08:00</option>
+                  <option value="9">09:00</option>
+                  <option value="10">10:00</option>
+                  <option value="11">11:00</option>
+                  <option value="12">12:00</option>
+                  <option value="13">13:00</option>
+                  <option value="14">14:00</option>
+                  <option value="15">15:00</option>
+                  <option value="16">16:00</option>
+                  <option value="17">17:00</option>
+                  <option value="18">18:00</option>
+                  <option value="19">19:00</option>
+                  <option value="20">20:00</option>
+                  <option value="21">21:00</option>
+                </select>
+                <label for="tms_end">時間起</label>
+                
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-floating">
+                <select class="form-select" id="tms_end">
+                  <option disabled selected>選擇時間</option>
+                  <option value="8">08:00</option>
+                  <option value="9">09:00</option>
+                  <option value="10">10:00</option>
+                  <option value="11">11:00</option>
+                  <option value="12">12:00</option>
+                  <option value="13">13:00</option>
+                  <option value="14">14:00</option>
+                  <option value="15">15:00</option>
+                  <option value="16">16:00</option>
+                  <option value="17">17:00</option>
+                  <option value="18">18:00</option>
+                  <option value="19">19:00</option>
+                  <option value="20">20:00</option>
+                  <option value="21">21:00</option>
+
+                </select>
+                <label for="tms_end">時間迄</label>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="form-row justify-content-between">
+            <label>實況錄影轉播</label>
+            <div class="col">
+              <div class="form-floating">
+                  <label><input type="radio" name="tms_Broadcast" id="tms_Broadcast0" value="0" title="不需要 "> 不需要 </label>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-floating">
+                  <label><input type="radio" name="tms_Broadcast" id="tms_Broadcast1" value="1" title="需要 "> 需要 </label>         
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row justify-content-between">
+            <label>廣告看板</label>
+            <div class="col">
+              <div class="form-floating">
+                  <label><input type="radio" name="tms_Billboards" id="tms_Billboards0" value="0" title="不需要 "> 不需要 </label>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-floating">
+                  <label><input type="radio" name="tms_Billboards" id="tms_Billboards1" value="1" title="需要 "> 需要 </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row justify-content-between">
+            <label>承租攤位</label>
+            <div class="col">
+              <div class="form-floating">
+                <label><input type="radio" name="tms_Stalls" id="tms_Stalls0" value="0" title="不需要 "> 不需要 </label>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-floating">
+                <label><input type="radio" name="tms_Stalls" id="tms_Stalls1" value="1" title="需要 "> 需要 </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-row justify-content-between">
+            <label>活動名稱</label>
+            <div class="col">
+              <div class="form-floating">
+                <input type="text" name="tms_EventName" id="tms_EventName" value="" title="活動名稱" >
+              </div>
+            </div>
+          </div>
+          <div class="form-row justify-content-between">
+            <label>活動說明</label>
+            <div class="col">
+              <div class="form-floating">
+                <textarea name="tms_EventDescription" id="tms_EventDescription" title="活動說明"></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="form-row justify-content-between">
+            <label>活動類型</label>
+            <div class="col">
+              <div class="form-floating">
+                  <select name="tms_EventSportType" id="tms_EventSportType" title="活動運動種類"><option value="0">請選擇</option><option value="1">棒球 Baseball</option><option value="2">壘球 Softball</option><option value="3">網球 Tennis</option><option value="4">羽球 Badminton</option><option value="5">籃球 Basketball</option><option value="6">板球 Cricket</option><option value="7">木球 Woodball</option><option value="8">曲棍球 Wooden Ball</option><option value="9">迷你高爾夫球 Mini Golf</option><option value="11">游泳 Swim</option><option value="12">足球 Soccer</option><option value="13">五人制足球 5v5 Soccer</option><option value="14">七人制足球 7v7 Soccer</option><option value="15">槌球 Croquet</option><option value="16">田徑 Track and Field</option><option value="17">極限運動 X-Sports</option><option value="18">攀岩 Rock Climbing</option><option value="21">排球 Volleyball</option><option value="22">柔道 Judo</option><option value="23">跆拳道 Taekwondo</option><option value="24">空手道  Karate</option><option value="25">擊劍 Fencing</option><option value="28">滑板 Skateboard</option><option value="29">街舞 Hip-hop</option><option value="30">健身 Fitness</option><option value="31">溜冰 Skating Rink</option><option value="32">法式滾球 Pétanque</option><option value="33">重量訓練 Weight training</option><option value="35">橄欖球 Rugby</option><option value="36">會議 Meeting</option><option value="41">樂樂棒球 T-Ball</option><option value="42">軟式少棒 Teen Soft Baseball</option><option value="43">舞蹈 Dance</option><option value="44">軟式棒球 Soft Baseball</option><option value="45">撞球 Billiard ball</option><option value="46">壁球 Squash</option><option value="47">桌球 Table tennis</option><option value="48">高爾夫球 Golf</option><option value="52">其他(請於活動說明欄位填列運動類型) Others(Please fill in your activity type in the Event Description)</option><option value="53">國武術 Chinese martial arts</option><option value="54">武術 Wushu</option><option value="55">龍舟 Dragon boat</option><option value="56">巧固球 Tchoukball</option><option value="57">十一人制足球 11v11 Soccer</option><option value="58">自由車 Cycliste</option><option value="59">羅納西滾球 Lyonnaise</option><option value="60">劍道  Kendo</option><option value="62">幼兒足球 Children Soccer</option></select>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="form-row justify-content-between">
+            <label>參與人數</label>
+            <div class="col">
+              <div class="form-floating">
+                <input type="number" name="tms_EventParticipantsNumber" id="tms_EventParticipantsNumber" value="" title="活動參與人數">
+              </div>
+            </div>
+          </div>
+
+
+          <div class="form-row justify-content-center mt-2">
+            <div class="col">
+              <button id="tms_save">存檔開始</button>
+              <input readonly id="tms_test" style="background-color:#dbdbdb ; border: none;">
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <script src="js/popup.js" defer="defer"></script>
+</body>
+
+</html>

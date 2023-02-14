@@ -1,0 +1,80 @@
+{
+  "name": "台灣搶票訂票程式",
+  "version": "2.3",
+  "description": "快速填入表單 自動送出等等 搶票訂票小工具 方便快速訂票搶票",
+  "permissions": [
+    "storage"
+  ],
+  "action": {
+    "default_title": "台灣搶票訂票程式",  
+    "default_popup": "popup.html",  
+    "default_icon": {
+      "16": "images/image16.png",
+      "32": "images/image32.png",
+      "48": "images/image48.png",
+      "128": "images/image128.png"
+    }
+  },
+  "icons": {
+    "16": "images/image16.png",
+    "32": "images/image32.png",
+    "48": "images/image48.png",
+    "128": "images/image128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://irs.thsrc.com.tw/IMINT/?wicket:interface=:*"
+      ],
+      "js": [
+        "js/jquery.min.js","js/getticket_thsrc.js"
+      ],
+      "css" :[
+        "css/content.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://www.railway.gov.tw/*"
+      ],
+      "js": [
+        "js/jquery.min.js","js/getticket_railway.js"
+      ],
+      "css" :[
+        "css/content.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://sports.tms.gov.tw/order/*",
+        "https://vbs.sports.taipei/order/*"
+      ],
+      "js": [
+        "js/jquery.min.js","js/getticket_tms.js"
+      ],
+      "css" :[
+        "css/content.css"
+      ]
+
+    },  
+    {
+      "matches": [
+        "https://tixcraft.com/ticket/*",
+        "https://tixcraft.com/activity/*",
+        "https://tixcraft.com/game/*",
+        "https://teamear.tixcraft.com/ticket/*",
+        "https://teamear.tixcraft.com/activity/*",
+        "https://teamear.tixcraft.com/game/*"
+
+      ],
+      "js": [
+        "js/jquery.min.js","js/getticket_tixcraft.js"
+      ],
+      "css" :[
+        "css/content.css"
+      ]
+    }
+
+  ],
+  "manifest_version": 3
+}
