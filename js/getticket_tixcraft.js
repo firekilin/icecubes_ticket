@@ -1,11 +1,15 @@
 
+chrome.runtime.onMessage.addListener(
+    function(request, sender, sendResponse) {
+      console.log("close");
+      window.alert = function(x) {console.log(x)};
 
+    }
+  );
 
 $(()=>{
       
-  window.alert = function(str){
-    return ;
-}
+
         const postgetocrURL =(postdata, callback)=> {
             var xhr = new XMLHttpRequest();
             xhr.onload = function() {

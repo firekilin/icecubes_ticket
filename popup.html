@@ -1,29 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="zh-TW">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Placeholder Image</title>
-  
+  <!-- Required meta tags -->
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>icecubes ticket</title>
+    <!-- CSS only -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css">
-  <!-- CSS only -->
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <!-- JavaScript Bundle with Popper -->
-  <script src="js/jquery.min.js"></script>
-  <script src="js/bootstrap.bundle.min.js" ></script>
-  <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch:400,700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/pop.css">
-  
-
-  <style>
-
-  </style>
 </head>
 
 <body>
+  
   <div class="accordion" id="accordionExample">
     <div class="accordion-item">
       <h2 class="accordion-header" id="headingOne">
@@ -32,7 +24,7 @@
         </button>
       </h2>
       <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-        <section class="placeholder-image bg-secondary border rounded p-2">
+        <section class="placeholder-image bg-light border p-4">
           <p>限定 單程 依車次</p>
           <div class="form-row justify-content-between">
             <div class="col">
@@ -54,7 +46,7 @@
           <!--Second row-->
           <div class="form-row justify-content-center mt-2">
             <div class="col">
-              <div class="form-floating">
+              <div class="">
                 <select class="form-select" id="railway_start">
                   <option disabled selected>選擇出發站</option>
                   <option disabled >--基隆市--</option>
@@ -210,7 +202,7 @@
               </div>
             </div>
             <div class="col">
-              <div class="form-floating">
+              <div class="">
                 <select class="form-select" id="railway_end">
                   <option disabled selected>選擇抵達站</option>
                   <option disabled >--基隆市--</option>
@@ -423,7 +415,7 @@
         </button>
       </h2>
       <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-        <section class="bg-secondary border rounded p-2">
+        <section class="bg-light border p-4">
           <div class="form-row justify-content-between">
             <div class="col">
               <input type="checkbox"  id='thsrc_buyticket' >
@@ -500,7 +492,7 @@
         </button>
       </h2>
       <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-        <section class="bg-secondary border rounded p-2">
+        <section class="bg-light border p-4">
           <div class="form-row justify-content-between">
             <div class="col">
               <input type="checkbox"  id='tixcraft_quick' >
@@ -625,23 +617,23 @@
         </button>
       </h2>
       <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-        <section class="bg-secondary border rounded p-2">
+        <section class="bg-light border p-4">
           <div class="form-row justify-content-between">
             <label>是否啟動</label>
             <div class="col">
-              <div class="form-floating">
+              <div class="">
                 <label><input type="radio" name="tms_using" id="tms_using0" value="0" title="是"> 是 </label>
               </div>
             </div>
             <div class="col">
-              <div class="form-floating">
+              <div class="">
                 <label><input type="radio" name="tms_using" id="tms_using1" value="1" title="否"> 否 </label>
               </div>
             </div>
           </div>
           <div class="form-row justify-content-between">
             <div class="col">
-              <div class="form-floating">
+              <div class="">
                 <label for="tms_EventType">類別</label>
                 <select name="tms_EventType" id="tms_EventType" title="請選擇租借活動類別" class="form-select" style="overflow:hidden ;">
                   <option value="0">請選擇 </option>
@@ -657,7 +649,7 @@
           </div>
           <div class="form-row justify-content-between">
             <div class="col">
-              <div class="form-floating">
+              <div class="">
                 <label for="tms_GovernmentType">減(免)徵(收)情況</label>
                 <select name="tms_GovernmentType" id="tms_GovernmentType" t="1" title="是否符合下列減(免)徵(收)情形">
                   <option value="0">請選擇 Please select</option>
@@ -682,12 +674,12 @@
           <div class="form-row justify-content-between">
             <label>是否售票</label>
             <div class="col">
-              <div class="form-floating">
+              <div class="">
                 <label><input type="radio" name="tms_SellTickets" id="tms_SellTickets1" value="1" title="否 "> 否 </label>
               </div>
             </div>
             <div class="col">
-              <div class="form-floating">
+              <div class="">
                 <label><input type="radio" name="tms_SellTickets" id="tms_SellTickets2" value="2" title="是 "> 是 </label>
               </div>
             </div>
@@ -696,7 +688,7 @@
           <div class="form-row justify-content-between">
             <label>選擇場地</label>
             <div class="col">
-              <div class="form-floating">
+              <div class="">
                 <input type="text" name="tms_SubVenuesTagDiv" id="tms_SubVenuesTagDiv" value="" title="活動名稱" >
               </div>
             </div>
@@ -708,7 +700,7 @@
           </div>
           <div class="form-row justify-content-center mt-2">
             <div class="col">
-              <div class="form-floating">
+              <div class="">
                 <select class="form-select" id="tms_start">
                   <option disabled selected>選擇時間</option>
                   <option value="8">08:00</option>
@@ -731,7 +723,7 @@
               </div>
             </div>
             <div class="col">
-              <div class="form-floating">
+              <div class="">
                 <select class="form-select" id="tms_end">
                   <option disabled selected>選擇時間</option>
                   <option value="8">08:00</option>
@@ -759,12 +751,12 @@
           <div class="form-row justify-content-between">
             <label>實況錄影轉播</label>
             <div class="col">
-              <div class="form-floating">
+              <div class="">
                   <label><input type="radio" name="tms_Broadcast" id="tms_Broadcast0" value="0" title="不需要 "> 不需要 </label>
               </div>
             </div>
             <div class="col">
-              <div class="form-floating">
+              <div class="">
                   <label><input type="radio" name="tms_Broadcast" id="tms_Broadcast1" value="1" title="需要 "> 需要 </label>         
               </div>
             </div>
@@ -773,12 +765,12 @@
           <div class="form-row justify-content-between">
             <label>廣告看板</label>
             <div class="col">
-              <div class="form-floating">
+              <div class="">
                   <label><input type="radio" name="tms_Billboards" id="tms_Billboards0" value="0" title="不需要 "> 不需要 </label>
               </div>
             </div>
             <div class="col">
-              <div class="form-floating">
+              <div class="">
                   <label><input type="radio" name="tms_Billboards" id="tms_Billboards1" value="1" title="需要 "> 需要 </label>
               </div>
             </div>
@@ -787,12 +779,12 @@
           <div class="form-row justify-content-between">
             <label>承租攤位</label>
             <div class="col">
-              <div class="form-floating">
+              <div class="">
                 <label><input type="radio" name="tms_Stalls" id="tms_Stalls0" value="0" title="不需要 "> 不需要 </label>
               </div>
             </div>
             <div class="col">
-              <div class="form-floating">
+              <div class="">
                 <label><input type="radio" name="tms_Stalls" id="tms_Stalls1" value="1" title="需要 "> 需要 </label>
               </div>
             </div>
@@ -800,7 +792,7 @@
           <div class="form-row justify-content-between">
             <label>活動名稱</label>
             <div class="col">
-              <div class="form-floating">
+              <div class="">
                 <input type="text" name="tms_EventName" id="tms_EventName" value="" title="活動名稱" >
               </div>
             </div>
@@ -808,7 +800,7 @@
           <div class="form-row justify-content-between">
             <label>活動說明</label>
             <div class="col">
-              <div class="form-floating">
+              <div class="">
                 <textarea name="tms_EventDescription" id="tms_EventDescription" title="活動說明"></textarea>
               </div>
             </div>
@@ -816,7 +808,7 @@
           <div class="form-row justify-content-between">
             <label>活動類型</label>
             <div class="col">
-              <div class="form-floating">
+              <div class="">
                   <select name="tms_EventSportType" id="tms_EventSportType" title="活動運動種類"><option value="0">請選擇</option><option value="1">棒球 Baseball</option><option value="2">壘球 Softball</option><option value="3">網球 Tennis</option><option value="4">羽球 Badminton</option><option value="5">籃球 Basketball</option><option value="6">板球 Cricket</option><option value="7">木球 Woodball</option><option value="8">曲棍球 Wooden Ball</option><option value="9">迷你高爾夫球 Mini Golf</option><option value="11">游泳 Swim</option><option value="12">足球 Soccer</option><option value="13">五人制足球 5v5 Soccer</option><option value="14">七人制足球 7v7 Soccer</option><option value="15">槌球 Croquet</option><option value="16">田徑 Track and Field</option><option value="17">極限運動 X-Sports</option><option value="18">攀岩 Rock Climbing</option><option value="21">排球 Volleyball</option><option value="22">柔道 Judo</option><option value="23">跆拳道 Taekwondo</option><option value="24">空手道  Karate</option><option value="25">擊劍 Fencing</option><option value="28">滑板 Skateboard</option><option value="29">街舞 Hip-hop</option><option value="30">健身 Fitness</option><option value="31">溜冰 Skating Rink</option><option value="32">法式滾球 Pétanque</option><option value="33">重量訓練 Weight training</option><option value="35">橄欖球 Rugby</option><option value="36">會議 Meeting</option><option value="41">樂樂棒球 T-Ball</option><option value="42">軟式少棒 Teen Soft Baseball</option><option value="43">舞蹈 Dance</option><option value="44">軟式棒球 Soft Baseball</option><option value="45">撞球 Billiard ball</option><option value="46">壁球 Squash</option><option value="47">桌球 Table tennis</option><option value="48">高爾夫球 Golf</option><option value="52">其他(請於活動說明欄位填列運動類型) Others(Please fill in your activity type in the Event Description)</option><option value="53">國武術 Chinese martial arts</option><option value="54">武術 Wushu</option><option value="55">龍舟 Dragon boat</option><option value="56">巧固球 Tchoukball</option><option value="57">十一人制足球 11v11 Soccer</option><option value="58">自由車 Cycliste</option><option value="59">羅納西滾球 Lyonnaise</option><option value="60">劍道  Kendo</option><option value="62">幼兒足球 Children Soccer</option></select>
               </div>
             </div>
@@ -827,7 +819,7 @@
           <div class="form-row justify-content-between">
             <label>參與人數</label>
             <div class="col">
-              <div class="form-floating">
+              <div class="">
                 <input type="number" name="tms_EventParticipantsNumber" id="tms_EventParticipantsNumber" value="" title="活動參與人數">
               </div>
             </div>
@@ -847,7 +839,9 @@
 
 
 
-
+  <!-- JavaScript Bundle with Popper -->
+  <script src="js/bootstrap.bundle.min.js" ></script>
+  <script src="js/jquery.min.js"></script>
   <script src="js/popup.js" defer="defer"></script>
 </body>
 
