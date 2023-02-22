@@ -15,7 +15,9 @@
 </head>
 
 <body>
-  
+  <div>
+    <a href="https://www.facebook.com/icecubes.ticket/">粉絲專頁面(免費喔)</a>
+  </div>
   <div class="accordion" id="accordionExample">
     <div class="accordion-item">
       <h2 class="accordion-header" id="headingOne">
@@ -502,12 +504,12 @@
           <div class="form-row justify-content-between">
             
             <div class="col">
+              <label for="tixcraft_date">日期(確認場次)</label>
               <input type="date"  id='tixcraft_date' name="tixcraft_date" >
-              <label for="tixcraft_date">日期</label>
             </div>
             <div class="col">
+              <label for="tixcraft_time">時間(確認場次)</label>
               <input type="text"  id='tixcraft_time' name="tixcraft_time" placeholder="08:00" >
-              <label for="tixcraft_time">時間</label>
             </div>
           </div>
           <div class="form-row justify-content-between">
@@ -522,7 +524,7 @@
 
           <div class="form-row justify-content-between">
             <div class="col">
-              <label for="tixcraft_area">區域名稱，配合示意圖填寫(不用寫完整)</label>
+              <label for="tixcraft_area">區域名稱，配合示意圖填寫(自己試試)</label>
             </div>
           </div>  
           <div class="form-row justify-content-between">
@@ -561,11 +563,12 @@
           </div>
           <div class="form-row justify-content-between">
             <div class="col">
-              <p><label for="tixcraft_omg">第五序列(只求有位)</label></p>
+              <p>
+                <label for="tixcraft_omg">只求有位</label>  
+                <input type="checkbox" id='tixcraft_omg' >
+              </p>
             </div>
-            <div class="col">
-              <input type="checkbox" id='tixcraft_omg' >
-            </div>
+
           </div>
           <div class="form-row justify-content-between">
             <div class="col">
@@ -582,23 +585,23 @@
             </div>
             <div class="col">
               <input type="text"  id='tixcraft_anser' placeholder="xxxxxx" />
-              <label for="tixcraft_anser">( 信用卡8碼或其他答案）</label>
+              <label for="tixcraft_anser">( 信用卡8碼或其他答案）(目前可能無法使用)</label>
             </div>
           </div>
           <div class="form-row justify-content-between">
             <div class="col">
-              <p><label for="tixcraft_ocr">自動驗證碼</label></p>
-            </div>
-            <div class="col">
-              <input type="checkbox" id='tixcraft_ocr' >
+              <p>
+                <label for="tixcraft_ocr">自動驗證碼</label>
+                <input type="checkbox" id='tixcraft_ocr' >
+              </p>
             </div>
           </div>
           <div class="form-row justify-content-between">
             <div class="col">
-              <p><label for="tixcraft_autosend">自動送出(有機率被鎖)</label></p>
-            </div>
-            <div class="col">
-              <input type="checkbox" id='tixcraft_autosend' >
+              <p>
+                <label for="tixcraft_autosend">自動送出(有機率被鎖)</label>              
+                <input type="checkbox" id='tixcraft_autosend' >
+              </p>
             </div>
           </div>
           <div class="form-row justify-content-center mt-2">

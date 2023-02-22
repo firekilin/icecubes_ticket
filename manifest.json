@@ -1,6 +1,6 @@
 {
   "name": "台灣搶票訂票程式",
-  "version": "2.3",
+  "version": "3.0",
   "manifest_version": 3,
   "description": "快速填入表單 自動送出等等 搶票訂票小工具 方便快速訂票搶票",
   "permissions": [
