@@ -4,7 +4,7 @@
   "manifest_version": 3,
   "description": "快速填入表單 自動送出等等 搶票訂票小工具 方便快速訂票搶票",
   "permissions": [
-    "storage","declarativeNetRequest","webNavigation"
+    "storage"
   ],
   "action": {
     "default_title": "台灣搶票訂票程式",  
@@ -23,10 +23,16 @@
     "128": "images/image128.png"
   },
 
-
   "background": {
-    "service_worker": "js/background.js"
+    "service_worker": "js/background.js",
+    "type": "module"
   },
+
+  "web_accessible_resources": [{
+    "resources": ["images/image48.png","onnx/common.onnx","onnx/onnx.min.js.map"],
+    "matches": ["<all_urls>"]
+  }],
+
   "content_scripts": [
     {
       "matches": [
@@ -74,7 +80,7 @@
 
       ],
       "js": [
-        "js/jquery.min.js","js/getticket_tixcraft.js"
+        "js/jquery.min.js","js/getticket_tixcraft.js","onnx/onnx.min.js","onnx/onnxread.js"
       ],
       "css" :[
         "css/content.css"

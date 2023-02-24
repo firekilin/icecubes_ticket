@@ -47,3 +47,59 @@ a:hover {
 .buttons .btn-sm {
   font-size: .72rem;
 }
+.icecubestitcket {
+  display: block;
+  line-height: 50px;
+  text-align: center;
+}
+
+.icecubestitcket > a {
+  animation-duration: 3s;
+  animation-name: fbshow;
+  animation-iteration-count: infinite;
+}
+
+@keyframes fbshow {
+  0% {
+    color: rgb(255, 0, 0);
+
+  }
+  10% {
+    color: rgb(255, 125, 0);
+
+  }
+  20% {
+    color: rgb(255, 255, 0);
+
+  }
+  30% {
+    color: rgb(125, 255, 0);
+
+  }
+  40% {
+    color: rgb(0, 255, 0);
+
+  }
+  50% {
+    color: rgb(0, 255, 125);
+
+  }
+  60% {
+    color: rgb(0, 255, 255);
+
+  }
+  70% {
+    color: rgb(125, 125, 255);
+
+  }
+  80% {
+    color: rgb(255, 125, 255);
+  }
+  90% {
+    color: rgb(255, 0, 255);
+  }
+  100%{
+    color: rgb(255, 0, 0);
+
+  }
+}

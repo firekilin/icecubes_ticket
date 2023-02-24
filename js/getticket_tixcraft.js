@@ -1,50 +1,9 @@
 
-chrome.runtime.onMessage.addListener(
-    function(request, sender, sendResponse) {
-      console.log("close");
-      window.alert = function(x) {console.log(x)};
-
-    }
-  );
-
 $(()=>{
-      
 
-        const postgetocrURL =(postdata, callback)=> {
-            var xhr = new XMLHttpRequest();
-            xhr.onload = function() {
-                if(xhr.response!="false"){
-                    callback(xhr.response);
-                }
-                
-            };
-            xhr.open('POST', 'https://tixcraftocr.oou.tw/getocr',true);
-                
-                xhr.setRequestHeader('Content-type','application/json');
-                // 格式為 JSON
-                var data = JSON.stringify(postdata);
-                // 將 JSON 轉為 文字
-                xhr.send(data);
-        }
-        
-        const toDataURL = url => fetch(url)
-        .then(response => response.blob())
-        .then(blob => new Promise((resolve, reject) => {
-        const reader = new FileReader()
-        reader.onloadend = () => resolve(reader.result)
-        reader.onerror = reject
-        reader.readAsDataURL(blob)
-        }))
-        
-        const getocrimg = (url,callback)=>{
+        let ddddOcr=new DdddOcr();
 
-            toDataURL(url)
-                .then(data => {
-                    postgetocrURL(`{"img":"${data.substring(data.indexOf(",")+1)}"}`,callback);
-                });
-        }
-    
-        chrome.storage.local.get([
+        chrome.storage.local.get([ //取得瀏覽器擴充本地儲存
         "tixcraft_quick",
         "tixcraft_date",
         "tixcraft_time",
@@ -59,10 +18,13 @@ $(()=>{
         "tixcraft_autosend",
         "tixcraft_ticketcount"
       ] ,(result)=> {
-        $("a").each((k,e)=>{
-        if($(e).text()=="立即購票"){
-            $(e).parent().parent().append($("<a>").attr("href",$(e).attr("href")).text("冰塊:這網址更快"));
-        }});
+        if(window.location.href.indexOf("activity/detail")>0){ //在detail 頁面 推薦 game頁面
+            $("a").each((k,e)=>{  //each 每個都會跑  所以會影響效能
+            if($(e).text()=="立即購票"){
+                $(e).parent().parent().append($("<a>").attr("href",$(e).attr("href")).text("冰塊:這網址更快"));
+            }});
+        }
+
         let iceconsole=$("<div>").attr("style","width: 200px;");
         let icediv = document.createElement("div");
         icediv.setAttribute("id", "icecubes_ticket");
@@ -96,25 +58,27 @@ $(()=>{
         icediv.append(iceimg);
         $(icediv).append(iceconsole);
         $("body").append(icediv);
-        if(result.tixcraft_quick){
-            
-            let restartticket=()=>{
-                $("a").each((k,e)=>{
-                    if($(e).text()=="立即購票"){
-                        let element=e;
-                        if ("createEvent" in document) {
-                            var evt = document.createEvent("HTMLEvents");
-                            evt.initEvent("click", false, true);
-                            element.dispatchEvent(evt);
-                        }
-                        else{
-                            element.fireEvent("click");
-                        }
-                    }});
-            }
-            console.log(window.location.href);
+
+
+        if(result.tixcraft_quick){  //如果插件是啟動的
 
             if(window.location.href.indexOf("activity/detail")>0){
+                   
+                let restartticket=()=>{ //按下立即購票
+                    $("a").each((k,e)=>{
+                        if($(e).text()=="立即購票"){
+                            let element=e;
+                            if ("createEvent" in document) {
+                                var evt = document.createEvent("HTMLEvents");
+                                evt.initEvent("click", false, true);
+                                element.dispatchEvent(evt);
+                            }
+                            else{
+                                element.fireEvent("click");
+                            }
+                        }});
+                }
+              
                 restartticket();
                 let trygettime=0;
                 let tryget = setInterval(function() {
@@ -176,6 +140,7 @@ $(()=>{
                         window.location.reload();
                     }
             }else if(window.location.href.indexOf("ticket/area")>0){ //選擇區域
+                
                 if(result.tixcraft_auto=="human"){
                     
                     $("#select_form_manual").click();
@@ -237,7 +202,7 @@ $(()=>{
                 }
 
             }else if(window.location.href.indexOf("ticket/ticket")>0){ //選擇張數
-                console.log("test");
+                
                 if(result.tixcraft_auto!="human"){
                     let maxcount= $($("#ticketPriceList").find("select")[0]).find("option").length-1;
                     if(maxcount>=result.tixcraft_ticketcount){
@@ -246,7 +211,7 @@ $(()=>{
                         $($("#ticketPriceList").find("select")[0]).val(maxcount);
                     }  
                 }
-                /*
+                /* 舊版本使用之驗證方式解法
                 $("script").each((k,e)=>{
                     if($(e).text().includes("isTrust")){
                         let readline=$(e).text().split('"');
@@ -259,22 +224,61 @@ $(()=>{
                         }
                     }
                 });*/
+
                 $("label[for=TicketForm_agree]").click();
                 document.getElementById("TicketForm_verifyCode").focus();
+
+                const postgetocrURL =(postdata, callback)=> { //取得圖片base64
+                    var xhr = new XMLHttpRequest(); //xhr建立
+                    xhr.onload = function() { //xhr基礎設定
+                        if(xhr.response!="false"){
+                            callback(xhr.response);
+                        }
+                    };
+                    xhr.open('POST', 'https://tixcraftocr.oou.tw/getocr',true);  //設定冰塊伺服器
+                    xhr.setRequestHeader('Content-type','application/json');
+                    // 格式為 JSON
+                    var data = JSON.stringify(postdata); //圖片存進data
+                    // 將 JSON 轉為 文字
+                    xhr.send(data); //開始傳送
+                }
+                
+                const toDataURL = url => fetch(url)  //設定fetch
+                .then(response => response.blob())   //回傳為byte[] 轉 base64
+                .then(blob => new Promise((resolve, reject) => {
+                const reader = new FileReader()
+                reader.onloadend = () => resolve(reader.result)
+                reader.onerror = reject
+                reader.readAsDataURL(blob)
+                }))
+                const getocrimg = (url,callback)=>{ //傳送圖片
+                    toDataURL(url)
+                        .then(data => {
+                            postgetocrURL(`{"img":"${data.substring(data.indexOf(",")+1)}"}`,callback);
+                        });
+                }
+                const toDataArray = url => fetch(url)
+                .then(response => response.arrayBuffer()) // 回傳為 ArrayBuffer
+                .then(buffer => new Uint8Array(buffer)) // 轉換成 Uint8Array
+              const getocrimgonnx = (url,callback)=>{
+                toDataArray(url)
+                  .then(data => {
+                    console.log(ddddOcr.classification(data));
+                  });
+              }
+
                 let captchf=()=>{
                     let captchaimg=$('#TicketForm_verifyCode-image').find('img');
                     let captcha=$('#TicketForm_verifyCode-image').attr("src");
                     if(captcha.indexOf('ticket/captcha')>0){
-                        getocrimg(captcha,(ocrstring)=>{
+                        getocrimgonnx(captcha,(ocrstring)=>{
                             if(ocrstring.length==4){
                                 $('#TicketForm_verifyCode').val(ocrstring);
                                 if(result.tixcraft_autosend){
                                     $("#form-ticket-ticket").submit();
                                 }
                             }else{
-                                
-                                    captchaimg.click();
-                                
+                                captchaimg.click();
                                 captchf();
                             }
                            
