@@ -1,7 +1,6 @@
 
 $(()=>{
 
-        let ddddOcr=new DdddOcr();
 
         chrome.storage.local.get([ //取得瀏覽器擴充本地儲存
         "tixcraft_quick",
@@ -257,21 +256,13 @@ $(()=>{
                             postgetocrURL(`{"img":"${data.substring(data.indexOf(",")+1)}"}`,callback);
                         });
                 }
-                const toDataArray = url => fetch(url)
-                .then(response => response.arrayBuffer()) // 回傳為 ArrayBuffer
-                .then(buffer => new Uint8Array(buffer)) // 轉換成 Uint8Array
-              const getocrimgonnx = (url,callback)=>{
-                toDataArray(url)
-                  .then(data => {
-                    console.log(ddddOcr.classification(data));
-                  });
-              }
+              
 
                 let captchf=()=>{
                     let captchaimg=$('#TicketForm_verifyCode-image').find('img');
                     let captcha=$('#TicketForm_verifyCode-image').attr("src");
                     if(captcha.indexOf('ticket/captcha')>0){
-                        getocrimgonnx(captcha,(ocrstring)=>{
+                        getocrimg(captcha,(ocrstring)=>{
                             if(ocrstring.length==4){
                                 $('#TicketForm_verifyCode').val(ocrstring);
                                 if(result.tixcraft_autosend){

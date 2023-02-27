@@ -23,13 +23,8 @@
     "128": "images/image128.png"
   },
 
-  "background": {
-    "service_worker": "js/background.js",
-    "type": "module"
-  },
-
   "web_accessible_resources": [{
-    "resources": ["images/image48.png","onnx/common.onnx","onnx/onnx.min.js.map"],
+    "resources": ["images/image48.png"],
     "matches": ["<all_urls>"]
   }],
 
@@ -80,7 +75,7 @@
 
       ],
       "js": [
-        "js/jquery.min.js","js/getticket_tixcraft.js","onnx/onnx.min.js","onnx/onnxread.js"
+        "js/jquery.min.js","js/getticket_tixcraft.js"
       ],
       "css" :[
         "css/content.css"
