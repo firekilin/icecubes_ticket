@@ -1,13 +1,13 @@
 {
-  "name": "台灣搶票訂票程式",
-  "version": "3.0",
+  "name": "台灣冰塊搶票訂票程式",
+  "version": "3.1",
   "manifest_version": 3,
   "description": "快速填入表單 自動送出等等 搶票訂票小工具 方便快速訂票搶票",
   "permissions": [
     "storage"
   ],
   "action": {
-    "default_title": "台灣搶票訂票程式",  
+    "default_title": "台灣冰塊搶票訂票程式",  
     "default_popup": "popup.html",  
     "default_icon": {
       "16": "images/image16.png",
